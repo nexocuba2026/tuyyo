@@ -1,0 +1,214 @@
+/* Paleta de rojos */
+:root {
+    --rojo-oscuro: #b71c1c;
+    --rojo-medio: #e53935;
+    --rojo-claro: #ffcdd2;
+    --fondo: #fff5f5;
+    --texto: #3e0e0e;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+}
+
+/* Portada */
+.landing {
+    background: linear-gradient(135deg, #fce4e4, #fff5f5);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.landing-container h1 {
+    color: var(--rojo-oscuro);
+    margin-bottom: 20px;
+    font-size: 2.8rem;
+}
+.btn-diary {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 30px;
+    background: var(--rojo-medio);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(183, 28, 28, 0.3);
+    transition: 0.3s;
+}
+.btn-diary:hover {
+    background: var(--rojo-oscuro);
+    transform: scale(1.03);
+}
+
+/* Login y autenticación */
+.auth-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--fondo);
+}
+.auth-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+.auth-container h1 {
+    color: var(--rojo-oscuro);
+    margin-bottom: 25px;
+}
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--rojo-claro);
+    border-radius: 10px;
+    font-size: 1rem;
+}
+.auth-container button {
+    background: var(--rojo-medio);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+#error-msg {
+    color: var(--rojo-medio);
+    margin-top: 10px;
+}
+
+/* Diario */
+.diary-page {
+    padding: 20px;
+    min-height: 100vh;
+}
+.diary-container header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.diary-container h1 {
+    color: var(--rojo-oscuro);
+    font-size: 2rem;
+}
+#logout-btn {
+    background: var(--rojo-medio);
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* Calendario */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fce4e4;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--texto);
+    transition: 0.2s;
+    position: relative;
+}
+.calendar-day:hover {
+    background: var(--rojo-claro);
+}
+.calendar-day.has-entries::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    background: var(--rojo-medio);
+    border-radius: 50%;
+}
+.calendar-day.today {
+    border: 2px solid var(--rojo-medio);
+}
+.calendar-day.other-month {
+    opacity: 0.3;
+    cursor: default;
+}
+
+#day-entries {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 600px;
+}
+#selected-date-title {
+    color: var(--rojo-oscuro);
+    margin-bottom: 15px;
+}
+.entry-card {
+    background: #fce4e4;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--rojo-medio);
+}
+.entry-card img {
+    max-width: 200px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+#entry-form {
+    margin-top: 20px;
+}
+#entry-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--rojo-claro);
+    border-radius: 12px;
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+}
+#entry-form input[type="file"] {
+    margin: 10px 0;
+}
+#entry-form button {
+    background: var(--rojo-medio);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
