@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Diario</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="diary-page">
+    <div class="diary-container">
+        <header>
+            <h1>❤️ Nuestro Diario</h1>
+            <button id="logout-btn">Salir</button>
+        </header>
+        <div id="calendar"></div>
+        <div id="day-entries">
+            <h2 id="selected-date-title">Selecciona un día</h2>
+            <div id="entries-list"></div>
+            <form id="entry-form" style="display:none;">
+                <textarea id="entry-content" placeholder="Escribe algo bonito..."></textarea>
+                <input type="file" id="entry-image" accept="image/*">
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script src="js/diary.js"></script>
+</body>
+</html>
