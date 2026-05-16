@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar | Nuestro Diario</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <h1>🌹 Diario de Mely & Emanuel</h1>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Tu correo" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="error-msg"></p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/supabase-client.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const { error } = await supabase.auth.signInWithPassword({ email, password });
+            if (error) {
+                document.getElementById('error-msg').textContent = 'Usuario o contraseña incorrectos';
+            } else {
+                window.location.href = 'diary.html';
+            }
+        });
+    </script>
+</body>
+</html>
